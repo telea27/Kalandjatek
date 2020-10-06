@@ -10,7 +10,8 @@ namespace KalandjatekLea
     {
         static void Main(string[] args)
         {
-            
+            Csata cs = new Csata();
+            Console.ReadKey();
         }
     }
 }

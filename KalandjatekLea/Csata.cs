@@ -20,7 +20,7 @@ namespace KalandjatekLea
 
         public void listaFeltoltese()
         {
-            StreamReader r = new StreamReader("harcos 1.csv");
+            StreamReader r = new StreamReader("harcosok 1.csv");
             while (!r.EndOfStream)
             {
                 string sor = r.ReadLine();
