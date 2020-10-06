@@ -14,6 +14,7 @@ namespace KalandjatekLea
 
         public Csata()
         {
+            this.ellenfelek = new List<Karakter>();
             listaFeltoltese();
             kor();
         }
