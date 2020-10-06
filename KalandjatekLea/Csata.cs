@@ -12,7 +12,7 @@ namespace KalandjatekLea
         private List<Karakter> ellenfelek;
 
 
-        public Csata(List<Karakter> ellenfelek)
+        public Csata()
         {
             listaFeltoltese();
             kor();
