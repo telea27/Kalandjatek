@@ -24,7 +24,6 @@ namespace KalandjatekLea
         public int EllenfelKivalasztas()
         {
             Console.WriteLine("A lista hanyadik harcosával szeretne megküzdeni?");
-            Console.WriteLine("Hanyadik harcossal szeretne küzdeni?");
             int szam = Convert.ToInt32(Console.ReadLine());
             return szam;
         }
