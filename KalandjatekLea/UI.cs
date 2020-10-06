@@ -14,7 +14,7 @@ namespace KalandjatekLea
             string BekertNev = Console.ReadLine();
             Console.WriteLine("Kérem a karakter státuszsablonját");
             int BekertStatuszSablon = Convert.ToInt32(Console.ReadLine());
-            Karakter k1 = new Karakter(BekertNev, BekertStatuszSablon);
+            Karakter karakter = new Karakter(BekertNev, BekertStatuszSablon);
         }
         public void Kiiras()
         {
@@ -26,6 +26,14 @@ namespace KalandjatekLea
             Console.WriteLine("Hanyadik harcossal szeretne küzdeni?");
             int szam = Convert.ToInt32(Console.ReadLine());
             return szam;
+        }
+        
+        public char Menu()
+        {
+            char k;
+            Console.WriteLine("Mit kíván tenni a harcossal?\na) Megküzdeni\tb) Gyógyulni\tc)Kilépni");
+            k = Convert.ToChar(Console.ReadLine());
+            return k;
         }
     }
 }
