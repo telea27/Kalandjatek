@@ -11,10 +11,11 @@ namespace KalandjatekLea
     {
         private List<Karakter> ellenfelek;
 
+
         public Csata(List<Karakter> ellenfelek)
         {
-            this.ellenfelek = ellenfelek;
             listaFeltoltese();
+
         }
 
         public void listaFeltoltese()
@@ -24,24 +25,66 @@ namespace KalandjatekLea
             {
                 string sor = r.ReadLine();
                 string[] st = sor.Split(';');
-                Karakter h = new Karakter(st[0],Int32.Parse(st[1]));
+                Karakter h = new Karakter(st[0], Int32.Parse(st[1]));
                 ellenfelek.Add(h);
             }
         }
 
-        public void kor(Karakter felhasznalo)
+        public void kor()
         {
+            Random r = new Random();
+            char menu;
             UI interfesz = new UI();
+            interfesz.KarakterBekeres();
+            Karakter felhasznalo = interfesz.KarakterBekeres();
+            int korSzamlalo = 1;
+
             do
             {
-                UI.KarakterBekeres();
+                //---menü
+                do
+                {
 
-                //
-                felhasznalo.Megkuzd();
+                    interfesz.Menu();
+                    menu = interfesz.Menu();
+                }
+                while (menu != 'a' && menu != 'b' && menu != 'c');
+                
+                //--- tamadas, Ellenfél választás
+                if (menu == 'a')
+                {
+                    int ellenIndex;
+                    do
+                    {
+                        interfesz.EllenfelKivalasztas();
+                        ellenIndex = interfesz.EllenfelKivalasztas();
+                    } while (ellenIndex < 1 || ellenIndex > this.ellenfelek.Count);
+                    // felhasznalo.Megkuzd(ellenfelek[ellenIndex-1]);
+                }
+                else if (menu == 'b')
+                {
+                    //felhasznalo.gyogyul();
+                }
 
 
 
-            } while ();
+
+                if (korSzamlalo % 3 == 0)
+                {
+                    int tamadoSorszam = r.Next(0, this.ellenfelek.Count);
+                    //this.ellenfelek[tamadoSorszam].Megkuzd(felhasznalo);
+
+                    foreach (Karakter i in ellenfelek)
+                    {
+                        //i.gyogyul();
+                    }
+                }
+                korSzamlalo++;
+
+            } 
+            while (menu != 'c');
+
+
         }
 
 
