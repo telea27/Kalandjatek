@@ -8,13 +8,14 @@ namespace KalandjatekLea
 {
     class UI
     {
-        public void KarakterBekeres()
+        public Karakter KarakterBekeres()
         {
             Console.WriteLine("Kérem a karakter nevét");
             string BekertNev = Console.ReadLine();
             Console.WriteLine("Kérem a karakter státuszsablonját");
             int BekertStatuszSablon = Convert.ToInt32(Console.ReadLine());
             Karakter karakter = new Karakter(BekertNev, BekertStatuszSablon);
+            return karakter;
         }
         public void Kiiras()
         {
