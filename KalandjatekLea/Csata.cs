@@ -19,6 +19,7 @@ namespace KalandjatekLea
             kor();
         }
 
+       
         public void listaFeltoltese()
         {
             StreamReader r = new StreamReader("harcosok 1.csv");
@@ -28,6 +29,10 @@ namespace KalandjatekLea
                 string[] st = sor.Split(';');
                 Karakter h = new Karakter(st[0], Int32.Parse(st[1]));
                 ellenfelek.Add(h);
+            }
+            foreach (Karakter item in this.ellenfelek)
+            {
+                Console.WriteLine(item);
             }
         }
 
