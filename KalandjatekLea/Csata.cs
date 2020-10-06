@@ -15,7 +15,7 @@ namespace KalandjatekLea
         public Csata(List<Karakter> ellenfelek)
         {
             listaFeltoltese();
-
+            kor();
         }
 
         public void listaFeltoltese()
